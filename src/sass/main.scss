@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.google.com/share?selection.family=Space%20Mono');
+
+a, p, h1, h2, h3, h4, h5, h6, span, div, button {
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #287bff;
+  --blue2: #3A4686;
+  --white: #fff;
+  --grey: #7F8085;
+  --grey2: #EFEFEF;
+  --black1: #222;
+  --black2: #999;
+
+}
+
+
+footer {
+  color: black;
+  margin-top: 100px;
+}
+
+footer a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+  transition-duration: 0.2s;
+}
+
+footer a:hover {
+  color: #00fa25;
+  text-decoration: none;
+}
+
+.copy {
+  font-size: 12px;
+  padding: 10px;
+  border-top: 1px solid #FFFFFF;
+}
+
+.footer-middle {
+  padding-top: 2em;
+  color: black;
+}
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.social-network a.icoFacebook:hover i {
+  color: #fff;
+}
+
+.social-network a.icoLinkedin:hover i {
+  color: #fff;
+}
+
+.social-network a.socialIcon:hover {
+  color: #44BCDD;
+}
+
+.socialHoverClass {
+  color: #44BCDD;
+}
+
+.social-network {
+  li {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 50%;
+    background-color: white;
+    color: #6bf5b3;
+  }
+}
+
+.dblock {
+  .dnone {
+    display: none;
+  }
+
+  &:hover {
+    .dnone {
+      display: block;
+    }
+  }
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle li a:hover i {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-circle i {
+  color: #595959;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.social-network a {
+  background-color: #F9F9F9;
+}
+
+.social-network a:hover {
+  background: #ff304d;
+}
+
+.bg-green {
+  background-color: #D4F5E4;
+}
+
+.text-green {
+  color: #D4F5E4;
+}
+
+.login {
+  height: 100%;
+  @media (min-width: 992px) {
+    overflow: hidden;
+  };
+}
+
+.container1 {
+  position: relative;
+}
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--white);
+  transition: 1s;
+  overflow: hidden;
+}
+
+.navigation.active {
+  width: 78px;
+
+  .image {
+    width: 40px;
+    margin-right: 15px;
+    transition: all 1s linear;
+  }
+}
+
+.navigation ul {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  padding-left: 0 !important;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.navigation ul li:hover,
+.navigation ul li.active {
+  background: var(--grey2);
+}
+
+.navigation ul li .nav-link {
+  position: relative;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #333333;
+}
+
+.navigation ul li:hover .nav-link,
+.navigation ul li.active .nav-link {
+  color: var(--grey);
+}
+
+.navigation ul li .nav-link .icon {
+  position: relative;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.navigation ul li .nav-link .icon .iconcha {
+  font-size: 1.75em;
+}
+
+.navigation ul li .nav-link .title {
+  position: relative;
+  display: block;
+  padding: 0 25px;
+  height: 40px;
+  line-height: 40px;
+  text-align: start;
+  white-space: nowrap;
+  //color: white;
+}
+
+
+.navigation ul li.active .nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  color: white;
+  margin: auto;
+  //width: 4px;
+  background-color: white;
+  transition: all 0.3s linear;
+}
+
+
+.main {
+  position: relative;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: #F9F9FB;
+  transition: 1s;
+}
+
+.main.active {
+  width: calc(100% - 120px);
+  left: 85px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+.toggle {
+  position: relative;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search .label {
+  position: relative;
+  width: 100%;
+}
+
+.search .label .input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.search .label .input-img {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.user {
+  position: relative;
+  min-width: 40px;
+  height: 40px;
+  padding: 5px 10px;
+  //border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--blue2);
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.user-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-right: 5px;
+  padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}
+.back{
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 35px;
+  margin-bottom: 30px;
+}
+.profile {
+  border-radius: 35px;
+  padding: 32px;
+  //display: flex;
+  //justify-content: center;
+
+  img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  p{
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  h5{
+    font-size: 16px;
+  }
+}
