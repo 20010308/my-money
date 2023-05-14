@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useFormik} from "formik";
 import {useNavigate} from 'react-router-dom'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {postLogin} from "../redux/reducer/loginReducer";
 import {history} from "../redux/const";
 
@@ -10,6 +10,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     history.navigate = useNavigate();
+    const loading = useSelector(reducer => reducer.loginReducer.loading);
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -62,6 +63,7 @@ const Login = () => {
                             <button
                                 type="submit"
                                 className='btn btn-success w-100 mt-3'
+                                disabled={loading}
                             >
                                 Kirish
                             </button>

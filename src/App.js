@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Registr from "./pages/Registr";
 import Charts from "./pages/Charts";
 import Income from "./pages/Income";
-import Expence from "./pages/Expence";
+import Expense from "./pages/Expence";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import {ToastContainer} from "react-toastify";
@@ -17,9 +17,9 @@ function App() {
       <Routes>
         <Route path={'/'} element={<Login/>}/>
         <Route path={'/registr'} element={<Registr/>}/>
-        <Route path={'/chart'} element={<Charts/>}/>
-        <Route path={'/income'} element={<Income/>}/>
-        <Route path={'/expence'} element={<Expence/>}/>
+        <Route path={'/chart/:id'} element={<Charts/>}/>
+        <Route path={'/income/:id'} element={<Income/>}/>
+        <Route path={'/expence/:id'} element={<Expense/>}/>
         <Route path={'/home'} element={<Home/>}/>
         <Route path={'/profile'} element={<Profile/>}/>
       </Routes>

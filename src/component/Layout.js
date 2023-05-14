@@ -3,9 +3,11 @@ import {IoMenu} from 'react-icons/io5'
 import {Link, useLocation} from "react-router-dom";
 import {BiSearch} from "react-icons/bi";
 import {FaRegUserCircle} from "react-icons/fa";
+import {CgArrowBottomRightO} from "react-icons/cg";
 
 const Layout = (props) => {
 
+    const user = JSON.parse(localStorage.getItem('user'));
     const [name, setName] = useState("");
     const location = useLocation();
 
@@ -30,23 +32,23 @@ const Layout = (props) => {
                             <img src="/image/logo.png" className="image w-50" alt="Error"/>
                         </div>
                         <ul>
-                            <li className={location.pathname === "/chart" ? 'active' : ""}>
-                                <Link to="/chart"
-                                      className={`nav-link ${location.pathname === "/chart" ? 'active' : ""}`}>
+                            <li className={location.pathname === `/chart/${localStorage.getItem('companyId')}` ? 'active' : ""}>
+                                <Link to={`/chart/${localStorage.getItem('companyId')}`}
+                                      className={`nav-link ${location.pathname === `/chart/${localStorage.getItem('companyId')}` ? 'active' : ""}`}>
                                     <span className="icon"><img src="/image/line-chart.png" width='25px' height='25px' alt="Error"/></span>
-                                    <span className="title">Charts</span>
+                                    <span className="title">Grafika</span>
                                 </Link>
                             </li>
-                            <li className={location.pathname === "/income" ? 'active' : ""}>
-                                <Link to="/income"
-                                      className={`nav-link ${location.pathname === "/income" ? 'active' : ""}`}>
+                            <li className={location.pathname === `/income/${localStorage.getItem('companyId')}` ? 'active' : ""}>
+                                <Link to={`/income/${localStorage.getItem('companyId')}`}
+                                      className={`nav-link ${location.pathname === `/income/${localStorage.getItem('companyId')}` ? 'active' : ""}`}>
                                     <span className="icon"><img src="/image/income.png" width='25px' height='25px' alt="Error"/></span>
                                     <span className="title">Kirim</span>
                                 </Link>
                             </li>
-                            <li className={location.pathname === "/expence" ? 'active' : ""}>
-                                <Link to="/expence"
-                                      className={`nav-link ${location.pathname === "/expence" ? 'active' : ""}`}>
+                            <li className={location.pathname === `/expence/${localStorage.getItem('companyId')}` ? 'active' : ""}>
+                                <Link to={`/expence/${localStorage.getItem('companyId')}`}
+                                      className={`nav-link ${location.pathname === `/expence/${localStorage.getItem('companyId')}` ? 'active' : ""}`}>
                                     <span className="icon"><img src="/image/expenses.png" width='25px' height='25px' alt="Error"/></span>
                                     <span className="title">Chiqim</span>
                                 </Link>
@@ -60,7 +62,7 @@ const Layout = (props) => {
                     <div className="topbar align-items-center">
 
                         <div className='d-flex mt-2'>
-                            <h5>Kompany name</h5>
+                            <h5>{localStorage.getItem('companyName')}</h5>
                             <h5 className='text-success ms-5'>+25 000 000</h5>
                             <h5 className='text-danger ms-5'>-15 000 000</h5>
                         </div>
@@ -68,7 +70,7 @@ const Layout = (props) => {
                         <div className="user d-flex justify-content-between">
                             <div className="d-flex align-items-center justify-content-between">
                                 <span className="mr-2"><FaRegUserCircle className="user-img mr-3"/></span>
-                                <span style={{lineHeight: "18px"}}>{'Umidjon Xolmuminov'}</span>
+                                <span style={{lineHeight: "18px"}}>{user.last_name} {' '} {user.first_name}</span>
                             </div>
                         </div>
                     </div>

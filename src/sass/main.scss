@@ -403,3 +403,12 @@ ul.social-network li {
     font-size: 16px;
   }
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+tspan{
+  font-size: 10px!important;
+}

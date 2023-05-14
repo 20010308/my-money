@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Layout from "../component/Layout";
 import {
     LineChart,
@@ -11,11 +11,25 @@ import {
     Tooltip,
     Legend,
     Bar,
-    BarChart,
-    Pie, Cell, PieChart
+    BarChart
 } from "recharts";
+import {useDispatch, useSelector} from "react-redux";
+import {getExpenseChart, getIncomeChart} from "../redux/reducer/chartReducer";
 
 const Charts = (props) => {
+
+    const dispatch = useDispatch();
+    const income = useSelector(store => store.chartReducer.income);
+    const expense = useSelector(store => store.chartReducer.expense);
+    const kirimChiqim = [];
+    kirimChiqim.push(income);
+    kirimChiqim.push(expense);
+
+
+    useEffect(() => {
+        dispatch(getIncomeChart());
+        dispatch(getExpenseChart())
+    }, []);
 
     const data = [
         {
@@ -95,17 +109,17 @@ const Charts = (props) => {
             <div className="container">
                 <div className="row">
                     <div className="col-11 text-center mb-5 overflow-auto">
-                        <h4>Bir yillik kirim chiqim grafigi</h4>
-                        <LineChart width={1100} height={250} data={data}>
+                        <h4>Kirim grafigi</h4>
+                        <LineChart width={1100} height={250} data={income}>
                             <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                            <CartesianGrid stroke="#ccc" />
+                            <CartesianGrid stroke="#ccc"/>
                             <XAxis dataKey="name" />
                             <YAxis />
                         </LineChart>
                     </div>
                     <div className="col-11 text-center mb-5 overflow-auto">
-                        <h4>Yillik grafik</h4>
-                        <AreaChart width={1100} height={250} data={data}
+                        <h4>Chiqim grafigi</h4>
+                        <AreaChart width={1100} height={250} data={expense}
                                    margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                             <defs>
                                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -126,8 +140,8 @@ const Charts = (props) => {
                         </AreaChart>
                     </div>
                     <div className="col-11 mb-5 text-center overflow-auto">
-                        <h4>Grafik</h4>
-                        <BarChart width={1100} height={250} data={data}>
+                        <h4>Kirim-chiqim grafigi </h4>
+                        <BarChart width={1100} height={250} data={kirimChiqim}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="name" />
                             <YAxis />

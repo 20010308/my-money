@@ -1,8 +1,8 @@
 import React from 'react';
 import {useFormik} from "formik";
 import {useNavigate} from 'react-router-dom'
-import {useDispatch} from "react-redux";
-import {postRegistgr} from "../redux/reducer/registrReducer";
+import {useDispatch, useSelector} from "react-redux";
+import registrReducer, {postRegistgr} from "../redux/reducer/registrReducer";
 import {history} from "../redux/const";
 
 const Registr = () => {
@@ -10,6 +10,7 @@ const Registr = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     history.navigate = useNavigate();
+    const loading = useSelector(reducer => reducer.registrReducer.loading);
     const formik = useFormik({
         initialValues: {
             first_name: '',
@@ -85,8 +86,9 @@ const Registr = () => {
                             <button
                                 type="submit"
                                 className='btn btn-success w-100 mt-3'
+                                disabled={loading}
                             >
-                                Kirish
+                                Ro'yxatdan o'tish
                             </button>
                             <p className="mb-0 mt-4 text-center">Akkauntingiz bormi?</p>
                             <div className="text-center">

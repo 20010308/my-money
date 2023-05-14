@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {API, history} from "../const";
-import axios from "axios";
 import {toast} from "react-toastify";
 
 const initialState = {
@@ -32,13 +31,14 @@ export const registrSlice = createSlice({
         [postRegistgr.fulfilled]: (state, {payload}) => {
             console.log(payload);
             if (!payload.user) {
+                state.loading = false;
                 toast.error("Email is already used")
             } else {
                 state.loading = false;
                 history.navigate("/home");
                 toast.success("Success !!!");
                 localStorage.setItem("user", JSON.stringify(payload?.user));
-                localStorage.setItem("access", JSON.stringify(payload?.access));
+                localStorage.setItem("access", JSON.stringify("Bearer " + payload?.access));
                 localStorage.setItem("refresh", JSON.stringify(payload?.refresh));
                 state.payload = JSON.parse(localStorage.getItem(payload))
             }
